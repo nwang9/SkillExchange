@@ -24,6 +24,9 @@ gem 'pry'
 gem 'active_model_serializers'
 gem 'aws-sdk', '~> 2'
 gem 'paperclip'
+#read js
+gem 'therubyracer'
+gem 'coffee-script-source'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
