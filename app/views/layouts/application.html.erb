@@ -3,12 +3,35 @@
   <head>
     <title>SkillExchange2</title>
     <%= csrf_meta_tags %>
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  	  <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+          <h2>SkillExchange</h2>
+          </div>
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Home", root_path,:class => 'btn btn-secondary' %></li>
+    <% if user_signed_in? %>
+              <li><%= link_to current_user.first_name, user_path(current_user), :class => 'btn btn-secondary' %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn btn-secondary' %></li>
+              <li><%= link_to %></li>
+    <% else %>
+
+              <li><%= link_to "Sign In", new_user_session_path, :class => 'btn btn-secondary'  %></li>
+              <li><%= link_to "Register", new_user_registration_path, :class => 'btn btn-secondary' %></li>
+    <% end %>
+            </ul>
+        </div>
+      </div>
+  </nav>
+
     <%= yield %>
   </body>
 </html>
