@@ -6,8 +6,6 @@
     
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 
-    <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'default', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -21,7 +19,6 @@
     <% if user_signed_in? %>
               <li><%= link_to current_user.first_name, user_path(current_user), :class => 'btn btn-secondary' %></li>
               <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn btn-secondary' %></li>
-              <li><%= link_to %></li>
     <% else %>
 
               <li><%= link_to "Sign In", new_user_session_path, :class => 'btn btn-secondary'  %></li>
@@ -31,7 +28,8 @@
         </div>
       </div>
   </nav>
-
+  <br>
+  
     <%= yield %>
   </body>
 </html>
